@@ -1,0 +1,1 @@
+Axios merupakan sebuah library yang berguna untuk melakukan proses HTTP request pada website dengan React JS. Axios dapat memudahkan pada saat mengelola interaksi antara client dan server. Axios menawarkan beberapa cara membuat request seperti GET, POST, PUT/PATCH, dan DELETE.
