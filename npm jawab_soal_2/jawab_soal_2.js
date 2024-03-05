@@ -5,56 +5,56 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const students = {
+const orang = {
   'Rachel': 17,
   'Micel': 21,
   'Juna': 27,
   'Jo': 18
 };
 
-function fetchStudentDataAsync(studentName) {
+function NamaAsync(namaSiswa) {
   return new Promise((resolve, reject) => {
     
     setTimeout(() => {
-      const age = students[studentName];
+      const age = orang[namaSiswa];
       if (age !== undefined) {
         resolve(age);
       } else {
-        reject('Student not found');
+        reject('Oh tidak, ga ketemu!');
       }
     }, 1000); 
   });
 }
 
 
-function fetchStudentDataCallback(studentName, callback) {
+function NamaCallback(namaSiswa, callback) {
   
   setTimeout(() => {
-    const age = students[studentName];
+    const age = orang[namaSiswa];
     if (age !== undefined) {
       callback(null, age);
     } else {
-      callback('Student not found', null);
+      callback('Yah, ga ada!', null);
     }
   }, 1000); 
 }
 
 async function main() {
   
-  rl.question('Enter student name to get age: ', async (input) => {
+  rl.question('Masukin namanya: ', async (input) => {
     try {
       
-      const ageAsync = await fetchStudentDataAsync(input);
+      const ageAsync = await NamaAsync(input);
       
-      console.log(`Age of ${input} (Async/await): ${ageAsync}`);
+      console.log(`Umur si ${input} (Async/await): ${ageAsync}`);
 
       
-      fetchStudentDataCallback(input, (error, ageCallback) => {
+      NamaCallback(input, (error, ageCallback) => {
         if (error) {
           console.error(error);
         } else {
           
-          console.log(`Age of ${input} (Callback): ${ageCallback}`);
+          console.log(`Umur si ${input} (Callback): ${ageCallback}`);
         }
         
         rl.close();
