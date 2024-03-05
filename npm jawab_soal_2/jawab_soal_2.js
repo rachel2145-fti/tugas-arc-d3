@@ -46,7 +46,7 @@ async function main() {
       
       const ageAsync = await fetchStudentDataAsync(input);
       
-      console.log('Age of ${input} (Async/await): ${ageAsync}');
+      console.log(`Age of ${input} (Async/await): ${ageAsync}`);
 
       
       fetchStudentDataCallback(input, (error, ageCallback) => {
@@ -54,7 +54,7 @@ async function main() {
           console.error(error);
         } else {
           
-          console.log('Age of ${input} (Callback): ${ageCallback}');
+          console.log(`Age of ${input} (Callback): ${ageCallback}`);
         }
         
         rl.close();
